@@ -4,6 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import {getAuth, GoogleAuthProvider} from "firebase/auth";
 import {getStorage} from "firebase/storage";
 import {getFirestore} from "firebase/firestore"
+
 const firebaseConfig = {
   apiKey: "AIzaSyCRfD3mCDutWYTRlCEasEkEWBWB-BzzaJw",
   authDomain: "fir-blog-50475.firebaseapp.com",
