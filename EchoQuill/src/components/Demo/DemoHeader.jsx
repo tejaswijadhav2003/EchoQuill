@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { useEffect, useState } from 'react'
-
+import Auth from '../Auth/Auth'
 function DemoHeader() {
   const [isActive, setIsActive] = useState(false);
   
@@ -34,7 +34,7 @@ function DemoHeader() {
               </div>
               <div className='relative'>
                 <button className=' text-sm sm:flext items-center gap-5 px-5'> Sign In</button>
-                
+                <Auth/>
                 <button className='bg-black text-white rounded-full px-3 p-2 text-sm'>Get Started</button>
 
               </div>

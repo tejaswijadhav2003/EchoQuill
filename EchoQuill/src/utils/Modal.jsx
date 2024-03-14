@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const Modal = ({children}) => {
+const Modal = ({ children, modal, setmodal }) => {
   return (
-    <div className='bg-white/50 fixed inset-0 z-10'>{children}</div>
-  )
-}
+    <>
+      <div
+        onClick={() => setmodal(false)}
+        className={`bg-white/50 fixed inset-0 z-10 
+      ${
+        modal ? "visible opacity-100" : "invisible opacity-0"
+      } transition-all duration-500`}
+      />
+      {children}
+    </>
+  );
+};
 
-export default Modal
+export default Modal;
