@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getAuth, GoogleAuthProvider} from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import {getStorage} from "firebase/storage";
 import {getFirestore} from "firebase/firestore"
 
@@ -14,6 +14,7 @@ const firebaseConfig = {
   appId: "1:734494130622:web:f7bc3f6072a5ed931f79ef",
   measurementId: "G-LQ6VDEBTJV"
 };
+const signInWithPopup = signInWithPopup();
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const auth = getAuth();

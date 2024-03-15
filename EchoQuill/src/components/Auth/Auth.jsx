@@ -4,12 +4,28 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { FcGoogle } from "react-icons/fc";
 import { MdFacebook } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
-
+import { signInWithPopup } from "firebase/auth";
 import { useState } from 'react';
+import {  auth, db, provider } from "../../firebase/firebase"
 function Auth({modal, setmodal}) {
   const [createUser, setCreateUser] = useState(false);
   
   const hidden = modal? "visible opacity-100" : "invisible-opacity-0";
+
+  const googleAuth = async () => {
+    try{
+      const createUser = await signInWithPopup(auth, provider);
+      const newUser = createUser.user;
+
+      const ref = doc(db, "users", newUser.uid);
+      const userDoc = await getDoc(ref);
+
+     
+    }catch(error){}
+  }
+
+
+
   return (
     <Modal modal={modal} setmodal = {setmodal} hidden = {hidden}>
       <section className={`z-50 fixed top-0 bottom-0 left-0 md:left-[10rem]
