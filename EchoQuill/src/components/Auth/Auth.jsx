@@ -6,9 +6,9 @@ import { MdFacebook } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
 
 import { useState } from 'react';
-function Auth() {
+function Auth({modal, setmodal}) {
   const [createUser, setCreateUser] = useState(false);
-  const [modal, setmodal] = useState(true);
+  
   const hidden = modal? "visible opacity-100" : "invisible-opacity-0";
   return (
     <Modal modal={modal} setmodal = {setmodal} hidden = {hidden}>

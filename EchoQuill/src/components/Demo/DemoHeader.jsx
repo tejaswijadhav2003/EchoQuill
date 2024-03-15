@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import Auth from '../Auth/Auth'
 function DemoHeader() {
   const [isActive, setIsActive] = useState(false);
-  
+  const[modal, setmodal] = useState(false);
     useEffect(() => {
       const scrollMe = () => {
         window.scrollY > 50 ? setIsActive(true) : setIsActive(false);
@@ -33,8 +33,10 @@ function DemoHeader() {
                 
               </div>
               <div className='relative'>
-                <button className=' text-sm sm:flext items-center gap-5 px-5'> Sign In</button>
-                <Auth/>
+                <button 
+                onClick={()=>setmodal(true)}
+                className=' text-sm sm:flext items-center gap-5 px-5'> Sign In</button>
+                <Auth modal={modal} setmodal={setmodal}/>
                 <button className='bg-black text-white rounded-full px-3 p-2 text-sm'>Get Started</button>
 
               </div>
