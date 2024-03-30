@@ -14,7 +14,6 @@ const firebaseConfig = {
   appId: "1:734494130622:web:f7bc3f6072a5ed931f79ef",
   measurementId: "G-LQ6VDEBTJV"
 };
-const signInWithPopup = signInWithPopup();
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const auth = getAuth();
