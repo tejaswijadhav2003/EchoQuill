@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 import { LiaEditSolid } from "react-icons/lia";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import Modal from "../../../utils/Modal"
+import UserModal from './UserModal';
 function HomeHeader() {
+  const [modal, setmodal] = useState(true);
   return (
     <header className='border-b border-gray-200'>
       <div className='size h-[60px] flex items-center justify-between'>
@@ -15,10 +20,10 @@ function HomeHeader() {
           src={Logo} alt="" 
           />
           </Link>
-          <Search></Search>
+          <Search/>
         </div>
-        <div>
-          <Link to="/write" className='hidden'>
+        <div className='flex items-center gap-3 sm:gap-7'>
+          <Link to="/write" className='hidden md:flex items-centre gap-1 text-gray-500'>
             <span>
               <LiaEditSolid/>
             </span>
@@ -26,6 +31,22 @@ function HomeHeader() {
               Write
             </span>
           </Link>
+          <span className="text-3xl text-gray-500 cursor-pointer">
+            <IoMdNotificationsOutline />
+          </span>
+          <div className='flex items-center relative'>
+            <img 
+              className='w-[2.3rem] hr-[2.3rem] object-cover rounded-full cursor-pointer'
+            src="/profile.jpg" alt="" />
+             <span className="text-gray-500 cursor-pointer">
+              <MdKeyboardArrowDown />
+            </span>
+            <Modal modal={modal} setmodal={setmodal}>
+              <div>
+                <UserModal/>
+              </div>
+            </Modal>
+          </div>
         </div>
       </div>
     </header>
