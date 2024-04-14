@@ -9,7 +9,7 @@ import HomeHeader from './components/Home/Header/HomeHeader'
 import DemoHeader from './components/Demo/DemoHeader'
 import { Navigate } from 'react-router-dom'
 import { Blog } from './Context/Context'
-import Profile from './components/Home/Profile.jsx/Profile'
+import Profile from './components/Home/'
 function App() {
   const [count, setCount] = useState(0)
   const auth =false;
