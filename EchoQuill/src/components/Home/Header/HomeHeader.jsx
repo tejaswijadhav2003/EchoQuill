@@ -8,7 +8,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import Modal from "../../../utils/Modal"
 import UserModal from './UserModal';
 function HomeHeader() {
-  const [modal, setmodal] = useState(true);
+  const [modal, setmodal] = useState(false);
   return (
     <header className='border-b border-gray-200'>
       <div className='size h-[60px] flex items-center justify-between'>
@@ -36,14 +36,19 @@ function HomeHeader() {
           </span>
           <div className='flex items-center relative'>
             <img 
+              onClick={()=>setmodal(true)}
               className='w-[2.3rem] hr-[2.3rem] object-cover rounded-full cursor-pointer'
-            src="/profile.jpg" alt="" />
+            src="/profile.jpg" alt=""
+             />
              <span className="text-gray-500 cursor-pointer">
               <MdKeyboardArrowDown />
             </span>
             <Modal modal={modal} setmodal={setmodal}>
-              <div>
-                <UserModal/>
+              <div
+                className={`${
+                  modal ? "visible opacity-100%" : "invisible opacity-0"
+                } transition-all duration-100`}>
+                <UserModal setmodal={setmodal} />
               </div>
             </Modal>
           </div>
